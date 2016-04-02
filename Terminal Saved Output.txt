@@ -1,0 +1,495 @@
+Last login: Wed Mar 30 14:32:09 on console
+mbp-de-eduardo:~ eduardo$ git
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+The most commonly used git commands are:
+   add        Add file contents to the index
+   bisect     Find by binary search the change that introduced a bug
+   branch     List, create, or delete branches
+   checkout   Checkout a branch or paths to the working tree
+   clone      Clone a repository into a new directory
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   fetch      Download objects and refs from another repository
+   grep       Print lines matching a pattern
+   init       Create an empty Git repository or reinitialize an existing one
+   log        Show commit logs
+   merge      Join two or more development histories together
+   mv         Move or rename a file, a directory, or a symlink
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+   rebase     Forward-port local commits to the updated upstream head
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+   show       Show various types of objects
+   status     Show the working tree status
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+'git help -a' and 'git help -g' lists available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+mbp-de-eduardo:~ eduardo$ git clone https://github.com/eduardomotacardoso/eduardomotacardoso.github.io.git
+Cloning into 'eduardomotacardoso.github.io'...
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
+mbp-de-eduardo:~ eduardo$ pwd
+/Users/eduardo
+mbp-de-eduardo:~ eduardo$ ls
+Applications			Music
+Desktop				Pictures
+Documents			Public
+Downloads			Samsung
+Library				eduardomotacardoso.github.io
+Movies
+mbp-de-eduardo:~ eduardo$ cd eduardomotacardoso.github.io/
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ ls
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ cd eduardomotacardoso.github.io/
+-bash: cd: eduardomotacardoso.github.io/: No such file or directory
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ pwd
+/Users/eduardo/eduardomotacardoso.github.io
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ echo "eduardo escarpinelli portifólio" >
+-bash: syntax error near unexpected token `newline'
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ echo "eduardo escarpinelli portifólio" > index.html
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ ls
+index.html
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ clear
+
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ ls
+index.html
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ 
+Display all 1566 possibilities? (y or n)
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git add --all
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   index.html
+
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git commit -m "primeira versao"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'eduardo@mbp-de-eduardo.(none)')
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git.user
+-bash: git.user: command not found
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git commit -m "primeira versao"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git config --global user.email "mota.eduardo.cardoso@gmail.com"
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git config --global user.name "Eduardo Cardoso"
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git commit -m "primeira versao"
+[master (root-commit) a31f1ac] primeira versao
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.html
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ ls
+index.html
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git push origin master
+Username for 'https://github.com': eduardomotacardoso
+Password for 'https://eduardomotacardoso@github.com': 
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 255 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/eduardomotacardoso/eduardomotacardoso.github.io.git
+ * [new branch]      master -> master
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	campo.jpg
+
+no changes added to commit (use "git add" and/or "git commit -a")
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git add campo.jpg
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   campo.jpg
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index.html
+
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git add index.html
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   campo.jpg
+	modified:   index.html
+
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git committ -m "Primeira alteração"
+git: 'committ' is not a git command. See 'git --help'.
+
+Did you mean this?
+	commit
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git commit -m "Primeira alteração"
+[master a34188d] Primeira alteração
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+ create mode 100644 campo.jpg
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git push origin master
+Counting objects: 6, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 61.55 KiB | 0 bytes/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/eduardomotacardoso/eduardomotacardoso.github.io.git
+   a31f1ac..a34188d  master -> master
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git add index.html
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   index.html
+
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git commit -n index.html
+error: There was a problem with the editor 'vi'.
+Please supply the message using either -m or -F option.
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git commit -m index.html
+[master 565a60f] index.html
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working directory clean
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git push origin master
+Counting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 376 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/eduardomotacardoso/eduardomotacardoso.github.io.git
+   a34188d..565a60f  master -> master
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working directory clean
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ clear
+
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ ls -la 
+total 136
+drwxr-xr-x   5 eduardo  staff    170 30 Mar 22:59 .
+drwxr-xr-x@ 30 eduardo  staff   1020 31 Mar 00:09 ..
+drwxr-xr-x  13 eduardo  staff    442 31 Mar 00:10 .git
+-rw-r--r--@  1 eduardo  staff  63004 30 Mar 22:57 campo.jpg
+-rw-r--r--   1 eduardo  staff    111 31 Mar 00:05 index.html
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ ls
+campo.jpg	index.html
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	campo2.jpg
+
+nothing added to commit but untracked files present (use "git add" to track)
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git add campo2.jpg
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   campo2.jpg
+
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git comitt -m campo2.jpg
+git: 'comitt' is not a git command. See 'git --help'.
+
+Did you mean this?
+	commit
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git commit -m campo2.jpg
+[master 676b685] campo2.jpg
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 campo2.jpg
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working directory clean
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git push origin matter 
+error: src refspec matter does not match any.
+error: failed to push some refs to 'https://github.com/eduardomotacardoso/eduardomotacardoso.github.io.git'
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git push origin mater 
+error: src refspec mater does not match any.
+error: failed to push some refs to 'https://github.com/eduardomotacardoso/eduardomotacardoso.github.io.git'
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git push origin matter eduardomotacardoso.github.io
+error: src refspec matter does not match any.
+error: src refspec eduardomotacardoso.github.io does not match any.
+error: failed to push some refs to 'https://github.com/eduardomotacardoso/eduardomotacardoso.github.io.git'
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working directory clean
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git add index.html
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   index.html
+
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git commit -m index.html
+[master 05adabc] index.html
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working directory clean
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git push origin matter eduardomotacardoso.github.io
+
+error: src refspec matter does not match any.
+error: src refspec eduardomotacardoso.github.io does not match any.
+error: failed to push some refs to 'https://github.com/eduardomotacardoso/eduardomotacardoso.github.io.git'
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ 
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working directory clean
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git push origin matter eduardomotacardoso.github.io index.html
+error: src refspec matter does not match any.
+error: src refspec eduardomotacardoso.github.io does not match any.
+error: src refspec index.html does not match any.
+error: failed to push some refs to 'https://github.com/eduardomotacardoso/eduardomotacardoso.github.io.git'
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git push origin mater
+error: src refspec mater does not match any.
+error: failed to push some refs to 'https://github.com/eduardomotacardoso/eduardomotacardoso.github.io.git'
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git push origin mater index.html
+error: src refspec mater does not match any.
+error: src refspec index.html does not match any.
+error: failed to push some refs to 'https://github.com/eduardomotacardoso/eduardomotacardoso.github.io.git'
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git push origin master
+Counting objects: 8, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 109.09 KiB | 0 bytes/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+To https://github.com/eduardomotacardoso/eduardomotacardoso.github.io.git
+   565a60f..05adabc  master -> master
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working directory clean
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working directory clean
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git push origin master
+Everything up-to-date
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working directory clean
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git commit -m index.html
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working directory clean
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working directory clean
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git push origin master
+Everything up-to-date
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ 'git add.'
+-bash: git add.: command not found
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ 'git add .'
+-bash: git add .: command not found
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git push origin master
+Everything up-to-date
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git commit -m index.html
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+	modified:   index.html
+
+no changes added to commit
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git commit -a index.html
+fatal: Paths with -a does not make sense.
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git commit -m index.html
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+	modified:   index.html
+
+no changes added to commit
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git add index.html 
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   index.html
+
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git commit -m index.html
+[master 83032e6] index.html
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git push origin master
+Counting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 312 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To https://github.com/eduardomotacardoso/eduardomotacardoso.github.io.git
+   05adabc..83032e6  master -> master
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working directory clean
+mbp-de-eduardo:eduardomotacardoso.github.io eduardo$ 
